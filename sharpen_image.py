@@ -1,5 +1,13 @@
-from PIL import Image, ImageFilter
 import sys
+
+
+#Read image
+try:
+    from PIL import Image, ImageFilter
+except ImportError:
+    print("error:", sys.argv[0], "requires Pillow - install it via 'pip install Pillow'")
+    sys.exit(2)
+
 
 if len(sys.argv) != 2:
     print("error - usage:", sys.argv[0], "basename")
@@ -17,8 +25,8 @@ except OSError:
     sys.exit(2)
 
 
-#Applying a filter to the image
+#Apply a filter to the image
 im_sharp = im.filter(ImageFilter.SHARPEN)
 
-#Saving the filtered image to a new file
+#Save the filtered image to a new file
 im_sharp.save(output_filename, 'JPEG')
