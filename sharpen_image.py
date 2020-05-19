@@ -18,7 +18,7 @@ except OSError:
 
 
 #Applying a filter to the image
-#im_sharp = im.filter(ImageFilter.SHARPEN)
+im_sharp = im.filter(ImageFilter.SHARPEN)
 
 #Saving the filtered image to a new file
-#im_sharp.save(output_filename, 'JPEG')
+im_sharp.save(output_filename, 'JPEG')
