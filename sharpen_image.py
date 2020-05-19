@@ -9,19 +9,18 @@ except ImportError:
     sys.exit(2)
 
 
-if len(sys.argv) != 2:
-    print("error - usage:", sys.argv[0], "basename")
+if len(sys.argv) != 3:
+    print("error - usage:", sys.argv[0], "input_file output_file")
     sys.exit(2)
 
-basename = sys.argv[1]
-input_filename = basename + '.jpg'
-output_filename = basename + '_sharp.jpg'
+input_filename = sys.argv[1]
+output_filename = sys.argv[2]
 
 #Read image
 try:
     im = Image.open(input_filename)
 except OSError:
-    print("error - can't open file: ", basename, ".jpg", sep="")
+    print("error - can't open file:", input_file)
     sys.exit(2)
 
 
