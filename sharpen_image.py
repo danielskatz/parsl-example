@@ -1,7 +1,5 @@
 import sys
 
-
-#Read image
 try:
     from PIL import Image, ImageFilter
 except ImportError:
@@ -22,7 +20,6 @@ try:
 except OSError:
     print("error - can't open file:", input_file)
     sys.exit(2)
-
 
 #Apply a filter to the image
 im_sharp = im.filter(ImageFilter.SHARPEN)
